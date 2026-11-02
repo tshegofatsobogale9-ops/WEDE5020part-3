@@ -1,13 +1,7 @@
 # Segwaelana Fresh Basket - Bakery Website
 ### WEDE5020 Part 3 Final Project | Segwaelane, Rustenburg
 
-**Student:** [Your Name]  
-**Student Number:** [Your Number]  
-**GitHub:** https://github.com/[your-username]/segwaelana-fresh-basket  
-**Live Site:** https://segwaelana-fresh-basket.netlify.app  
-**Location:** Stall 14, Market Square, Segwaelane, Rustenburg, North West
 
----
 
 ## 1. Project Overview
 Segwaelana Fresh Basket is a local bakery website built for a real business in Segwaelane, Rustenburg. We bake fresh bread daily at 5AM. The site is optimized for local SEO "bakery Rustenburg" and "fresh bread Segwaelane near me".
