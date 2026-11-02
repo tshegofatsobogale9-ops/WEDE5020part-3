@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Segwaelana Fresh Basket - Fresh bread baked 5AM daily in Segwaelane, Rustenburg. Brown R18, white R16. Free delivery over R100.">
+<meta name="keywords" content="bakery Rustenburg, fresh bread Segwaelane, Segwaelana bakery">
+<meta name="author" content="Segwaelana Bakery">
+<title>Fresh Bread & Cakes in Segwaelane | Segwaelana Fresh Basket</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+<header><h1>Segwaelana Fresh Basket - Bakery in Rustenburg</h1>
+<nav><a href="index.html">Home</a><a href="aboutUs.html">About</a><a href="services.html">Products</a><a href="contactUs.html">Contact</a><a href="enquiry.html">Enquiry</a></nav></header>
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200" alt="Fresh Bread Hero - Segwaelana Bakery Rustenburg" loading="lazy">
+<div class="hero-text"><h2>Freshly Baked Every Morning</h2><p>Serving Segwaelane since 2020</p><a href="services.html" class="btn">See Products</a> <button id="offerBtn" class="btn" style="background:#3a1e05;">Today's Offer</button></div>
+</div>
+<main>
+<h2 id="dynamic-greet">Welcome to Our Bakery</h2>
+<p>We bake fresh bread, cakes and fresh baskets daily at 5AM. Local ingredients, affordable prices.</p>
+<div class="sub-banner"><h3>🔥 TODAY'S SPECIAL: Buy 2 Brown Bread Get 1 Free!</h3></div>
+<h3>Why Choose Us?</h3><ul><li>Fresh daily 5AM</li><li>From R16</li><li>Local ingredients</li></ul>
+<div class="sub-banner light"><h3>🚚 Free Delivery in Segwaelane for Orders Over R100</h3></div>
+<h3>Best Sellers - Click to Enlarge (Lightbox)</h3>
+<div class="products">
+<div class="card"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600" alt="Brown Bread R18 Segwaelana Bakery" loading="lazy" onclick="openLightbox(this.src)"><p>Brown Bread - R18</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1589367920969-ab8c050bbb04?w=600" alt="White Bread Visible Bright Loaf R16 Segwaelana Bakery" loading="lazy" onclick="openLightbox(this.src)"><p>White Bread - R16</p></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600" alt="Cupcakes R25 for 6 Segwaelana Bakery" loading="lazy" onclick="openLightbox(this.src)"><p>Cupcakes - R25/6</p></div>
+</div>
+<h3>FAQ - Accordion</h3>
+<div class="accordion">
+<button class="accordion-header">What time do you open?</button><div class="accordion-content"><p>Mon-Sat 6AM-6PM, Sun 7AM-1PM - Fresh at 5AM</p></div>
+<button class="accordion-header">Do you deliver?</button><div class="accordion-content"><p>Yes, free delivery over R100 in Segwaelane. Call 012 345 6789</p></div>
+<button class="accordion-header">Can I order cakes?</button><div class="accordion-content"><p>Yes, 24h before. From R350.</p></div>
+</div>
+</main>
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;"><img id="lightbox-img" src="" style="max-width:90%; max-height:90%;"></div>
+<div id="offerModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000;"><div style="background:white; margin:15% auto; padding:20px; width:80%; max-width:400px; border-radius:8px; text-align:center;"><h3>Special Offer!</h3><p>Buy 2 Brown Bread Get 1 Free - Today Only</p><button onclick="closeModal()">Close</button></div></div>
+<footer><p>&copy; 2026 Segwaelana Fresh Basket | Stall 14, Market Square</p></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

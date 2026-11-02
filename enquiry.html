@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Enquire about Segwaelana Bakery products, bulk orders, sponsorship. Get cost and availability.">
+<title>Enquiry - Cost & Availability Segwaelana Bakery</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Segwaelana Fresh Basket</h1><nav><a href="index.html">Home</a><a href="aboutUs.html">About</a><a href="services.html">Products</a><a href="contactUs.html">Contact</a><a href="enquiry.html">Enquiry</a></nav></header>
+<div class="hero"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1200" alt="Enquiry Hero" loading="lazy"><div class="hero-text"><h2>Product Enquiry</h2><p>Cost & Availability</p></div></div>
+<main>
+<h3>Enquire About Products / Services / Sponsorship</h3>
+<form id="enquiryForm" onsubmit="return handleEnquiry(event)">
+<label>Full Name *</label><input type="text" id="enqName" required minlength="3" placeholder="e.g. Thabo Molefe">
+<label>Email *</label><input type="email" id="enqEmail" required placeholder="thabo@email.com">
+<label>Phone - 10 digits *</label><input type="tel" id="enqPhone" required pattern="[0-9]{10}" placeholder="0123456789" maxlength="10">
+<label>What are you enquiring about? *</label><select id="enqType" required><option value="">-- Select --</option><option value="bread">Fresh Bread - R16-R20</option><option value="cakes">Cakes - From R25</option><option value="bulk">Bulk Order for Shop / School (15 shops)</option><option value="sponsor">Sponsor / Volunteer</option></select>
+<label>Quantity / Details *</label><textarea id="enqDetails" required minlength="10" rows="4" placeholder="Need 50 brown bread daily"></textarea>
+<label>Preferred Delivery Date</label><input type="date" id="enqDate">
+<p id="enqError" style="color:red;"></p><p id="enqResponse" style="color:green; font-weight:bold; background:#e8f5e9; padding:10px; border-radius:5px;"></p>
+<button type="submit">Submit Enquiry - Get Cost</button>
+</form>
+<div id="afterEnqActions" style="display:none; text-align:center; margin-top:15px;">
+<button onclick="document.getElementById('enquiryForm').reset(); document.getElementById('enqResponse').textContent=''; this.parentElement.style.display='none';" style="background:orange;">🔄 Loop: New Enquiry</button>
+<a href="index.html" class="btn" style="background:brown;">🔙 Back to Home</a>
+</div>
+</main>
+<footer><p>&copy; 2026 Segwaelana Fresh Basket</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

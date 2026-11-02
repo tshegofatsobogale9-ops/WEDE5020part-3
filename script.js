@@ -1,0 +1,24 @@
+const productsData=[{name:"Brown Bread",price:"R18",img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600"},{name:"White Bread",price:"R16",img:"https://images.unsplash.com/photo-1589367920969-ab8c050bbb04?w=600"},{name:"Whole Wheat",price:"R20",img:"https://images.unsplash.com/photo-1598373182133-52452f7691ef?w=600"},{name:"Cupcakes",price:"R25 for 6",img:"https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600"},{name:"Birthday Cake",price:"R350",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600"}];
+function loadProducts(){const c=document.getElementById('productList');if(!c)return;c.innerHTML=productsData.map(p=>`<div class="card"><img src="${p.img}" alt="${p.name} - Fresh Bread Segwaelane" loading="lazy" onclick="openLightbox(this.src)"><p>${p.name} - ${p.price}</p></div>`).join('');}
+function searchProducts(){const q=document.getElementById('searchBox').value.toLowerCase();const f=productsData.filter(p=>p.name.toLowerCase().includes(q));document.getElementById('productList').innerHTML=f.map(p=>`<div class="card"><img src="${p.img}" alt="${p.name}" loading="lazy"><p>${p.name} - ${p.price}</p></div>`).join('');}
+function openLightbox(s){document.getElementById('lightbox-img').src=s;document.getElementById('lightbox').style.display='flex';}
+function closeLightbox(){document.getElementById('lightbox').style.display='none';}
+function closeModal(){document.getElementById('offerModal').style.display='none';}
+document.addEventListener('DOMContentLoaded',()=>{
+  loadProducts();
+  const h=new Date().getHours();let g=h<12?"Good Morning! Fresh Bread Ready at 5AM":h<18?"Good Afternoon! Come for Fresh Cakes":"Good Evening! Order for Tomorrow";const el=document.getElementById('dynamic-greet');if(el){el.textContent=g;el.classList.add('fade-in');}
+  document.querySelectorAll('.accordion-header').forEach(x=>{x.addEventListener('click',()=>{x.nextElementSibling.classList.toggle('active');});});
+  const btn=document.getElementById('offerBtn');if(btn){btn.onclick=()=>{document.getElementById('offerModal').style.display='block';}}
+  setTimeout(()=>{
+    const md=document.getElementById('leafletMap');if(!md)return;
+    var map=L.map('leafletMap').setView([-25.667,27.146],14);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'© OpenStreetMap'}).addTo(map);
+    L.marker([-25.667,27.146]).addTo(map).bindPopup('<b>Segwaelana Bakery</b><br>Stall 14, Market Square').openPopup();
+    setTimeout(()=>{map.invalidateSize();},500);
+  },300);
+});
+function handleContact(e){e.preventDefault();const name=document.getElementById('cName').value.trim();const email=document.getElementById('cEmail').value.trim();const type=document.getElementById('cType').value;const msg=document.getElementById('cMessage').value.trim();const err=document.getElementById('cError');const suc=document.getElementById('cSuccess');err.textContent="";if(name.length<3){err.textContent="Name min 3 chars";return false;}if(msg.length<15){err.textContent="Message min 15 chars";return false;}const compiled=`To: info@segwaelana.co.za\nFrom: ${name} <${email}>\nType: ${type}\nMessage: ${msg}`;console.log(compiled);suc.textContent="Sending via AJAX...";document.getElementById('sendBtn').disabled=true;setTimeout(()=>{suc.textContent=`Thank you ${name}! Sent to info@segwaelana.co.za`;document.getElementById('contactForm').style.display='none';document.getElementById('afterSendActions').style.display='block';},1000);return false;}
+function loopForm(){document.getElementById('contactForm').reset();document.getElementById('contactForm').style.display='block';document.getElementById('afterSendActions').style.display='none';document.getElementById('cError').textContent="";document.getElementById('cSuccess').textContent="";document.getElementById('sendBtn').disabled=false;window.scrollTo({top:0,behavior:'smooth'});}
+function goBackHome(){window.location.href='index.html';}
+function goBack(){window.history.back();}
+function handleEnquiry(e){e.preventDefault();const name=document.getElementById('enqName').value.trim();const phone=document.getElementById('enqPhone').value.trim();const type=document.getElementById('enqType').value;const err=document.getElementById('enqError');const res=document.getElementById('enqResponse');err.textContent="";if(name.length<3){err.textContent="Name 3+ chars";return false;}if(phone.length!==10||isNaN(phone)){err.textContent="Phone 10 digits";return false;}let m=`Hi ${name}, Brown R18 White R16 Available 5AM Free delivery over R100`;if(type==="cakes")m=`Hi ${name}, Cupcakes R25/6 Cakes R350 24h notice`;if(type==="bulk")m=`Hi ${name}, Bulk 30+ 10% discount Supply 15 shops`;if(type==="sponsor")m=`Thanks ${name} for sponsorship`;res.style.display='block';res.textContent="Processing via AJAX...";setTimeout(()=>{res.textContent=m;document.getElementById('afterEnqActions').style.display='block';},800);return false;}

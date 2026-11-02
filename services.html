@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Our Fresh Products - Brown Bread R18, White Bread R16, Whole Wheat R20, Cupcakes R25. Baked daily in Segwaelane.">
+<title>Products - Fresh Bread & Cakes Segwaelana</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Segwaelana Fresh Basket</h1><nav><a href="index.html">Home</a><a href="aboutUs.html">About</a><a href="services.html">Products</a><a href="contactUs.html">Contact</a><a href="enquiry.html">Enquiry</a></nav></header>
+<div class="hero"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=1200" alt="Fresh Products Hero" loading="lazy"><div class="hero-text"><h2>Our Fresh Products</h2><p>Baked daily with love</p></div></div>
+<main>
+<div class="sub-banner"><h3>🍞 FRESH BREAD - Baked 5AM Every Morning in Rustenburg</h3></div>
+<input type="text" id="searchBox" placeholder="Search bread, cakes... (e.g. white)" onkeyup="searchProducts()" style="padding:10px; width:100%; margin-bottom:15px;">
+<div id="productList" class="products"></div>
+<div class="sub-banner light"><h3>🎂 CAKES - Order 24 Hours Before - From R25</h3></div>
+<p>All prices affordable - From R16. Free delivery over R100.</p>
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;"><img id="lightbox-img" src="" style="max-width:90%; max-height:90%;"></div>
+</main>
+<footer><p>&copy; 2026 Segwaelana Fresh Basket</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
